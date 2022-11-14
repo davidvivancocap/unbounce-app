@@ -1,0 +1,380 @@
+@import "mixins";
+
+/* Simple classes group */
+
+// Displays
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.inline {
+  display: inline;
+}
+// Margins
+
+.mapfre-no-margin{
+  margin: 0;
+}
+
+// Auto
+.mapfre-ml-a {
+  margin-left: auto;
+}
+
+// Super small
+
+.mapfre-mr-xxs {
+  margin-right: 4px;
+}
+
+.mapfre-ml-xxs {
+  margin-left: 4px;
+}
+
+.mapfre-mt-xxs {
+  margin-top: 4px;
+}
+
+.mapfre-mb-xxs {
+  margin-bottom: 4px;
+}
+
+// Extra small
+
+.mapfre-mr-xs {
+  margin-right: 6px;
+}
+
+.mapfre-ml-xs {
+  margin-left: 6px;
+}
+
+.mapfre-mt-xs {
+  margin-top: 6px;
+}
+
+.mapfre-mb-xs {
+  margin-bottom: 6px;
+}
+
+// Small
+
+.mapfre-mr-s {
+  margin-right: 8px;
+}
+
+.mapfre-ml-s {
+  margin-left: 8px;
+}
+
+.mapfre-mt-s {
+  margin-top: 8px;
+}
+
+.mapfre-mb-s {
+  margin-bottom: 8px;
+}
+
+// Small medium
+
+.mapfre-mr-sm {
+  margin-right: 16px;
+}
+
+.mapfre-ml-sm {
+  margin-left: 16px;
+}
+
+.mapfre-mt-sm {
+  margin-top: 16px;
+}
+
+.mapfre-mb-sm {
+  margin-bottom: 16px;
+}
+
+// Extra small medium
+
+.mapfre-mr-xsm {
+  margin-right: 24px;
+}
+
+.mapfre-ml-xsm {
+  margin-left: 24px;
+}
+
+.mapfre-mt-xsm {
+  margin-top: 24px;
+}
+
+.mapfre-mb-xsm {
+  margin-bottom: 24px;
+}
+
+// Medium
+
+.mapfre-mr-m {
+  margin-right: 32px;
+}
+
+.mapfre-ml-m {
+  margin-left: 32px;
+}
+
+.mapfre-mt-m {
+  margin-top: 32px;
+}
+
+.mapfre-mb-m {
+  margin-bottom: 32px;
+}
+
+// Large
+
+.mapfre-mt-l {
+  margin-top: 48px;
+}
+
+.mapfre-mb-l {
+  margin-bottom: 48px;
+}
+
+// Extra large
+
+.mapfre-mt-xl {
+  margin-top: 64px;
+}
+
+// Paddings
+
+// Super small
+.mapfre-pr-xxs {
+  padding-right: 4px;
+}
+
+.mapfre-pl-xxs {
+  padding-left: 4px;
+}
+
+.mapfre-pt-xxs {
+  padding-top: 4px;
+}
+
+.mapfre-pb-xxs {
+  padding-bottom: 4px;
+}
+
+// Small medium
+.mapfre-pr-sm {
+  padding-right: 16px;
+}
+
+.mapfre-pl-sm {
+  padding-left: 16px;
+}
+
+.mapfre-pt-sm {
+  padding-top: 16px;
+}
+
+.mapfre-pb-sm {
+  padding-bottom: 16px;
+}
+// Small
+.mapfre-pr-s {
+  padding-right: 8px;
+}
+
+.mapfre-pl-s {
+  padding-left: 8px;
+}
+
+.mapfre-pt-s {
+  padding-top: 8px;
+}
+
+.mapfre-pb-s {
+  padding-bottom: 8px;
+}
+
+.mapfre-pr-m {
+  padding-right: 32px;
+}
+
+.mapfre-pr-l {
+  padding-right: 35px;
+}
+
+.mapfre-pl-m {
+  padding-left: 32px;
+}
+
+.mapfre-pl-l {
+  padding-left: 35px;
+}
+
+.mapfre-pt-m {
+  padding-top: 32px;
+}
+
+.mapfre-pb-m {
+  padding-bottom: 132px;
+}
+
+.pf {
+  position: fixed;
+}
+
+.pa {
+  position: absolute;
+}
+
+.df {
+  display: flex;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+.fg-1 {
+  flex-grow: 1;
+}
+
+.ff-rw {
+  flex-flow: row wrap;
+}
+
+.ai-s {
+  align-items: flex-start;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.ai-e {
+  align-items: flex-end;
+}
+
+.jc-s {
+  justify-content: flex-start;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-e {
+  justify-content: flex-end;
+}
+
+.mt-m-r {
+  margin-top: 32px;
+
+  @include mapfre-screen-mobile {
+    margin-top: 24px;
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100{
+  height: 100vh;
+}
+
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-m-r {
+  margin-bottom: 32px;
+
+  @include mapfre-screen-mobile {
+    margin-bottom: 24px;
+  }
+}
+
+.mapfre-fs-xxs {
+  @include mapfre-fs-xxs;
+}
+
+.mapfre-fs-xxs-r {
+  @include mapfre-fs-xxs-r;
+}
+
+.mapfre-fs-xs {
+  @include mapfre-fs-xs;
+}
+
+.mapfre-fs-xs-r {
+  @include mapfre-fs-xs-r;
+}
+
+.mapfre-fs-s {
+  @include mapfre-fs-s;
+}
+
+.mapfre-fs-s-r {
+  @include mapfre-fs-s-r;
+}
+
+.mapfre-fs-m {
+  @include mapfre-fs-m;
+}
+
+.mapfre-fs-m-r {
+  @include mapfre-fs-m-r;
+}
+
+.mapfre-fs-l {
+  @include mapfre-fs-l;
+}
+
+.mapfre-fs-xl {
+  @include mapfre-fs-xl;
+}
+
+.mapfre-fs-xxl {
+  @include mapfre-fs-xxl;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italics {
+  font-style: italic;
+}

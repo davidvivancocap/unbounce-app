@@ -1,0 +1,52 @@
+<div class="error-container content">
+  <div class="error-header flex fd-col">
+    <div class="error-header-icon"></div>
+    <div class="error-divider"></div>
+  </div>
+  <div class="error-main-container mapfre-mb-m flex jc-c fd-col ai-c">
+    <div class="icon-container flex jc-c">
+      <div class="error-icon"></div>
+    </div>
+    <div class="
+        mapfre-pl-sm mapfre-pr-sm mapfre-fs-l mapfre-color-dark mapfre-mt-m
+        fw-500
+        text-center
+        error-title
+      ">
+      No se ha podido realizar tu consulta
+    </div>
+    <div *ngIf="params.messageKo" [innerHTML]="common.decode(params.messageKo)" class="
+        error-message
+        mapfre-pl-sm
+        mapfre-pr-sm
+        mapfre-fs-s
+        mapfre-color-medium-dark
+        mapfre-mt-sm
+        text-center
+      "></div>
+    <div class="error-btn-container flex jc-c fd-col w-100 ai-c">
+      <button (click)="common.redirectTo(params?.btnKoUrl)" class="error-primary-btn" *ngIf="params?.btnKoText"
+        [innerHTML]="params?.btnKoText"></button>
+      <button *ngIf="params?.formUrl" (click)="common.redirectTo(params?.formUrl)" class="error-secondary-btn"
+        [ngClass]="{
+          'secondary-btn-alone': !params?.btnKoText,
+          'secondary-btn-no-alone': params?.btnKoText
+        }">
+        Vuelve a intentarlo más tarde
+      </button>
+    </div>
+  </div>
+  <div class="error-divider"></div>
+
+  <div class="error-footer flex ai-e">
+    <div class="flex w-100 text-center jc-sb">
+      <div class="
+          mapfre-fs-s mapfre-mb-l mapfre-mt-s mapfre-color-medium-dark
+          error-footer-date
+        ">
+        MAPFRE © {{date}}
+      </div>
+      <div class="error-triangle"></div>
+    </div>
+  </div>
+</div>

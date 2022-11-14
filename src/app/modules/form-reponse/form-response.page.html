@@ -1,0 +1,14 @@
+<div *ngIf="loading" class="w-100 h-100 flex jc-c ai-c">
+  <mat-spinner> </mat-spinner>
+</div>
+
+<app-success-request
+  [params]="params"
+  [date]="date"
+  *ngIf="!loading && result === 'success'"
+></app-success-request>
+<app-error-request
+  *ngIf="!loading  && result === 'error'"
+  [date]="date"
+  [params]="params"
+></app-error-request>

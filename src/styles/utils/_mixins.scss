@@ -1,0 +1,107 @@
+@import 'responsive';
+
+@mixin activeAndHover() {
+  &:active {
+    @content;
+  }
+
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      @content;
+    }
+  }
+}
+
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  @if $max-width != '' {
+    max-width: 100%;
+  }
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // IE hack
+    overflow: visible;
+  }
+}
+
+// Font size mixins
+@mixin mapfre-fs-xxs {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin mapfre-fs-xxs-r {
+  font-size: 12px;
+  line-height: 16px;
+
+  @include mapfre-screen-tablet-and-mobile {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+@mixin mapfre-fs-xs {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@mixin mapfre-fs-xs-r {
+  font-size: 14px;
+  line-height: 18px;
+
+  @include mapfre-screen-tablet-and-mobile {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@mixin mapfre-fs-s {
+  font-size: 16px;
+  line-height: 20px;
+}
+@mixin mapfre-fs-s-r {
+  font-size: 16px;
+  line-height: 20px;
+  @include mapfre-screen-tablet-and-mobile {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+@mixin mapfre-fs-m {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin mapfre-fs-m-r {
+  font-size: 20px;
+  line-height: 32;
+
+  @include mapfre-screen-tablet-and-mobile {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@mixin mapfre-fs-l {
+  font-size: 24px;
+  line-height: 28px;
+  
+}
+
+@mixin mapfre-fs-l-r {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin mapfre-fs-xl {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+@mixin mapfre-fs-xxl {
+  font-size: 32px;
+  line-height: 36px;
+}

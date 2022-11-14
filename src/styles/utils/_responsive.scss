@@ -1,0 +1,55 @@
+// Responsive breakpoints
+// You should be using only one at the same page:
+// df stands for Desktop First (Recommended)
+// mobile x-567
+// tablet 568-959
+// desktop 960-x
+// mobile+tablet x-959
+// tablet+desktop 568-x
+
+$mobile-breakpoint: 568px;
+$tablet-breakpoint: 960px;
+
+@mixin mapfre-screen-mobile {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mapfre-screen-tablet-and-mobile {
+  @media (max-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mapfre-screen-desktop {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin mapfre-screen-tablet-and-desktop {
+  @media (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+// Custom screen media query, only use it when some
+// device resolution significantly breaks the design
+@mixin mapfre-screen-custom($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin mapfre-screen-custom-max($max) {
+  @media (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin mapfre-screen-tablet {
+  @include mapfre-screen-custom($mobile-breakpoint, $tablet-breakpoint - 1px) {
+    @content;
+  }
+}

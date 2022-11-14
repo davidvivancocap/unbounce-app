@@ -1,0 +1,117 @@
+@import "utils/responsive";
+@import "variables";
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.error-icon,
+.success-icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 64px;
+    width: 64px;
+    height: 64px;
+    margin-top: 38px;
+}
+
+div[class*="header"] {
+    height: 8%;
+    
+    @include mapfre-screen-tablet-and-desktop {
+        height: 15%;
+    }
+
+    div[class*="header-icon"] {
+        background: url("https://landing.mapfre.es/portal/bannerWebMApfre/unbounce/img/mapfre_logo.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 137px 16px;
+        width: 137px;
+        height: 16px;
+        margin-top: 16px;
+        margin-left: 16px;
+        @include mapfre-screen-tablet-and-desktop {
+            width: auto;
+            max-width: 206px;
+            background-size: 206px 24px;
+            width: 206px;
+            height: 24px;
+            margin-top: 28px;
+            margin-left: 122px;
+        }
+    }
+    div[class*="divider"] {
+        @include mapfre-screen-tablet-and-desktop {
+            margin-top: 15px;
+        }
+    }
+}
+
+div[class*="icon-container"] {
+    img {
+        width: 64px;
+        @include mapfre-screen-tablet-and-desktop {
+            transform: scale(1.2);
+        }
+    }
+}
+
+div[class*="divider"] {
+    height: 1px;
+    background-color: #e8ebed;
+    @include mapfre-screen-mobile {
+        margin: 15px 0 0 22px;
+    }
+    @include mapfre-screen-tablet-and-desktop {
+        margin-left: 122px;
+        margin-right: 144px;
+    }
+}
+
+div[class*="main-container"] {
+    height: 65%;
+    @include mapfre-screen-tablet-and-desktop {
+        height: 64%;
+    }
+}
+div[class*="footer"] {
+    height: auto;
+    @include mapfre-screen-mobile {
+        height: 27%;
+    }
+
+  
+
+    div:nth-child(1) {
+        @include mapfre-screen-tablet-and-desktop {
+            justify-content: space-between;
+        }
+        div:nth-child(1) {
+            width: 100%;
+            display: flex;
+            margin-left: 20%;
+            justify-content: center;
+        }
+        div[class*="triangle"] {
+            width: 0;
+            height: 0;
+            border-bottom: 84px solid var(--primary);
+            border-left: 66px solid transparent;
+            @include mapfre-screen-tablet-and-desktop {
+                border-bottom: 170px solid var(--primary);
+                border-left: 146px solid transparent;
+            }
+        }
+    }
+}
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: var(--primary);
+}
+
+button {
+    cursor: pointer;
+}
