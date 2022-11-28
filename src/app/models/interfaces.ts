@@ -6,6 +6,7 @@ export interface UnbounceParams {
   btnOkText: string;
   btnOkUrl: string;
   messageKo: string;
+  tokenSF: string;
   pageName: string;
   formId: string;
   channel: string;

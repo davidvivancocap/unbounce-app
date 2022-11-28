@@ -8,7 +8,12 @@
         "activityBarBadge.background": "#80001a",
         "activityBarBadge.foreground": "#e7e7e7",
         "sash.hoverBorder": "#335cff",
-        "tab.activeBorder": "#335cff"
+        "commandCenter.border": "#e7e7e799",
+        "sideBar.border": "#335cff",
+        "titleBar.activeBackground": "#0033ff",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#0033ff99",
+        "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#0033ff"
 }

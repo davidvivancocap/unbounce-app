@@ -7,18 +7,15 @@
     <div class="icon-container flex jc-c">
       <div class="success-icon"></div>
     </div>
-    <div
-      class="
+    <div class="
         mapfre-pl-sm mapfre-pr-sm mapfre-fs-l mapfre-color-dark mapfre-mt-m
         fw-500
         text-center
         success-title
-      "
-    >
+      ">
       Tu consulta ha sido enviada correctamente
     </div>
-    <div
-      class="
+    <div class="
         mapfre-pl-sm
         mapfre-pr-sm
         mapfre-fs-s
@@ -26,15 +23,12 @@
         mapfre-mt-sm
         text-center
         success-message
-      "
-    >
+      ">
       Nos pondremos en contacto contigo lo antes posible.
     </div>
-    <div *ngIf="params?.btnOkText" 
-    class="success-btn-container flex jc-c">
-      <button (click)="common.redirectTo(params.btnOkUrl)"
-       class="success-primary-btn"
-      [innerHTML]="params?.btnOkText">
+    <div *ngIf="params?.btnOkText" class="success-btn-container flex jc-c">
+      <button (click)="common.redirectTo(params.btnOkUrl , params?.tokenSF)" class="success-primary-btn"
+        [innerHTML]="params?.btnOkText">
       </button>
     </div>
   </div>
@@ -42,8 +36,7 @@
 
   <div class="success-footer flex ai-e">
     <div class="flex w-100 text-center jc-c">
-      <div 
-      class="mapfre-fs-s 
+      <div class="mapfre-fs-s 
       mapfre-mb-l mapfre-mt-s 
       mapfre-color-medium-dark
       success-footer-date">
@@ -53,4 +46,3 @@
     </div>
   </div>
 </div>
-

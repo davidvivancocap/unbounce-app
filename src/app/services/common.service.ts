@@ -36,7 +36,8 @@ export class CommonService {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-  redirectTo(url: string): void {
+  redirectTo(url: string, tokenSF?: string): void {
+    if (tokenSF) url += `?tokenSF=${tokenSF}`;
     window.location.href = url;
   }
 
@@ -45,10 +46,10 @@ export class CommonService {
 
     if (typeof window['stepView'] === "function") {
       try {
-        const id = pageName.split(' ').join('_') + `_${step}`
+        const id = pageName.split(' ').join('_') + `_${step}`;
         window['stepView'](id);
       } catch (e) {
-        console.warn("*** Calling stepView function failed", e)
+        console.warn("*** Calling stepView function failed", e);
       }
     }
   }
@@ -76,7 +77,7 @@ export class CommonService {
       ...window['digitalData'].page,
       ...page,
       product_page_title: params.pageName,
-    }
+    };
 
   }
 
@@ -93,7 +94,7 @@ export class CommonService {
       login_status: params.loginStatus,
       error_type: error ? error.status : '',
       error_message: error ? error.message || 'unknown error' : ''
-    }
+    };
 
   }
 
