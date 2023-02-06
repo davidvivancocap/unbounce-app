@@ -59,9 +59,7 @@ export class CommonService {
       .replace(/HTMLOPEN/g, '<')
       .replace(/HTMLCLOSE/g, '>');
   }
-
-
-
+  
   set env(v: EnvironmentsTypes) {
     this._env = v;
   }

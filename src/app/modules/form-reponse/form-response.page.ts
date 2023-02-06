@@ -27,30 +27,38 @@ export class FormResponsePage implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.params = {...params} as UnbounceParams;
-      this.setRequestParamsToUrlQueryParams();
+      this.params = { ...params } as UnbounceParams;
+      this.setBtnUrlrlQueryParams('RequestOKParams');
+      this.setBtnUrlrlQueryParams('RequestKOParams');
       this.token = params['token'];
       const isDevelopment = this.common.isDevelopment();
       isDevelopment ? this.simulateSendRequest() : this.sendRequest();
     });
   }
 
-  private setRequestParamsToUrlQueryParams(): void {
-    const pathRequestOkParams = 'RequestOKParams';
-    const pathRequestKoParams = 'RequestKOParams';
-    let hasParamsRequest = Object.entries(this.params).filter( key => key[0].includes(pathRequestOkParams) || key[0].includes(pathRequestKoParams) );
-    
-    let queryParamsRequest: any = hasParamsRequest[0] ? hasParamsRequest.filter( (param) => param[0] = param[0].includes(pathRequestOkParams) ?
-      param[0].replace(pathRequestOkParams, '') : param[0].replace(pathRequestKoParams, '')) : 0;
+  private setBtnUrlrlQueryParams(suffix: 'RequestKOParams' | 'RequestOKParams'): void {
+    const suffixParam = suffix;
+    let hasParamsRequest = Object.entries(this.params).filter(key => key[0].includes(suffixParam));
 
+    let queryParamsRequest: any = hasParamsRequest[0]
+      ? hasParamsRequest.filter((param) => param[0] = param[0].replace(suffixParam, '')) : 0;
     if (queryParamsRequest) {
       let queryParamsConcat = '';
       let t;
-      let removeQueryParamsDuplicity = queryParamsRequest.filter(( t={}, a=> !(t[a]=a in t) ));
-      removeQueryParamsDuplicity.forEach( (param, i) => {
+      let removeQueryParamsDuplicity = queryParamsRequest.filter((t = {}, a => !(t[a] = a in t)));
+      removeQueryParamsDuplicity.forEach((param, i) => {
         queryParamsConcat += i === 0 ? '?' + `${param[0]}=${param[1]}` : '&' + `${param[0]}=${param[1]}`;
       });
-      this.params.btnOkUrl = this.params.btnOkUrl + queryParamsConcat;
+
+      if (suffix === 'RequestOKParams' && queryParamsConcat) {
+
+        this.params.btnOkUrl = this.params.btnOkUrl + queryParamsConcat;
+        return;
+      }
+
+      if (queryParamsConcat) {
+        this.params.btnKoUrl = this.params.btnKoUrl + queryParamsConcat;
+      }
     }
   }
 
@@ -58,7 +66,7 @@ export class FormResponsePage implements OnInit {
     setTimeout(() => {
       this.loading = false;
       this.result = 'error';
-      this.common.stepView(this.result, this.params, this.params.pageName)
+      this.common.stepView(this.result, this.params, this.params.pageName);
     }, 4000);
   }
 
@@ -70,12 +78,12 @@ export class FormResponsePage implements OnInit {
           ? 'success'
           : 'error';
 
-        this.common.stepView(this.result, this.params, this.params.pageName)
+        this.common.stepView(this.result, this.params, this.params.pageName);
       },
       (err) => {
         this.loading = false;
         this.result = 'error';
-        this.common.stepView(this.result, this.params, this.params.pageName, err)
+        this.common.stepView(this.result, this.params, this.params.pageName, err);
       }
     );
   }
